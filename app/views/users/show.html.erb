@@ -1,4 +1,7 @@
-<h1>
-  <%= gravatar_for @user %>
-  <%= @user.name %>
-</h1>
+<h1></h1>
+<%= gravatar_for @user %>
+<%= @user.name %>
+<!-- ここを追加しました by suzuki -->
+<%= @user.profile %>
+<%= @user.location %>
+<%= link_to "プロフィールの修正", edit_user_path(@user) %>
