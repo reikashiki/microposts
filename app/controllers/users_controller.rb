@@ -22,7 +22,14 @@ class UsersController < ApplicationController
   end
 
   def edit
-  end
+  @user = User.find(params[:id])
+if logged_in? && current_user == @user
+  # ログインユーザーとおなじ
+else
+  # ログインユーザーとは異なる
+end
+  
+end
  
   def update
   #<<ここを追加しました by suzuki
@@ -48,4 +55,5 @@ class UsersController < ApplicationController
     params.require(:user).permit(:name, :email, :profile, :location, :password,
                                  :password_confirmation)
   end
+  
 end
